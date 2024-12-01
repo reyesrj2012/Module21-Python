@@ -28,94 +28,47 @@ def place_order(menu):
     print("Welcome to the Generic Take Out Restaurant.")
 
     # TODO: Create a continuous while loop so customers can order multiple items
-def get_order_details():
-    item_name = input("Please enter the name of the item: ")
-    quantity = int(input(f"Please enter the quantity of {item_name}: "))
-    price = float(input(f"Please enter the price of {item_name}: "))
-    return item_name, quantity, price
-
-def main():
-    orders = []
-    keep_ordering = True
-    
-    while keep_ordering:
-        item_name, quantity, price = get_order_details()
-        orders.append({"item_name": item_name, "quantity": quantity, "price": price})
-        
-        another_order = input("Do you want to order another item? (yes/no): ").strip().lower()
-        if another_order != 'yes':
-            keep_ordering = False
-    
-    # Display the orders
-    for order in orders:
-        print(f"Item: {order['item_name']}, Quantity: {order['quantity']}, Price: ${order['price']:.2f}")
-
-if __name__ == "__main__":
-    main()
-
-        # TODO: Ask the customer what they want to order
-def ask_customer_order():
-    order = input("What would you like to order? ")
-    return order
-
-# Example usage
-order = ask_customer_order()
-print(f"You want to order: {order}")
-
-
-        # Create a variable for the menu item number
-        i = 1
-
+    place_order=True
+    while place_order: 
+        i=1
         # Print the menu header
         print_menu_heading()
 
-        # TODO: Loop through the menu dictionary
- #       menu = {
-#    "Appetizers": {
-#        "Fries": 2.99,
-#        "Onion Rings": 3.49
-#    },
-#    "Main Courses": {
-#        "Burger": 8.99,
-#        "Chicken Sandwich": 7.99,
-#        "Salad": 5.99
-#    },
-#    "Drinks": {
-#        "Soda": 1.49,
-#        "Coffee": 1.99,
-#        "Tea": 1.49
-#    }
-#}
+       
+        # Loop through the menu dictionary
+        for category, options in menu.items():
+           #print(f"\nCategory: {category}")
+            for meal, price in options.items():
+                print_menu_line(i, category, meal, price)
+                i+=1
+        def ask_customer_order(): order = input("What would you like to order? ") 
+        return order
+     
+    # Display the orders
+    
+        # Ask the customer what they want to order
 
-# Loop through the menu dictionary
-for category, items in menu.items():
-    print(f"\nCategory: {category}")
-    for item, price in items.items():
-        print(f"  {item}: ${price:.2f}")
+# Example usage
+
+        # Create a variable for the menu item number
+
 
 
 
         # TODO: Extract the food category and the options for each category
 
-for category, items in menu.items(): print(f"\nCategory: {category}") 
-for item, price in items.items(): print(f" {item}: ${price:.2f}")
-            # TODO: Loop through the options for each food category
 
-for category, items in menu.items(): print(f"\nCategory: {category}") 
-for item, price in items.items(): print(f" {item}: ${price:.2f}")
 
             # TODO: Extract the meal and the price for each option
                 # Print the menu item number, food category, meal, and price
 
-for category, items in menu.items(): for item, price in items.items(): print(f"{item_number}. 
-             Category: {category}, Meal: {item}, Price: ${price:.2f}") item_number += 1
+
                 # TODO: Only if you used different variable names
                 
                 # TODO: Update the variable names in the following function
-print_menu_line(i, food_category, meal, price)
 
                 # Update the menu selection number
-                i += 1
+               
 
         # TODO: Ask customer to input menu item number
 
